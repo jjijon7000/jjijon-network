@@ -320,42 +320,43 @@ const TAB_CONFIG = {
     experiences: { content: 'experiences-content', tabs: ['experiences-tab', 'sidebar-experiences-tab'] },
     projects: { content: 'projects-content', tabs: ['projects-tab', 'sidebar-projects-tab'] },
     skills: { content: 'skills-content', tabs: ['skills-tab', 'sidebar-skills-tab'] },
-    photos: { content: 'photos-content', tabs: ['photos-tab', 'sidebar-photos-tab'] }
+    photos: { content: 'photos-content', tabs: ['photos-tab', 'sidebar-photos-tab'] },
+    following: { content: 'following-content', tabs: ['following-tab'] }
 };
 
 function showTab(tabName) {
     const allContentIds = Object.values(TAB_CONFIG).map(config => config.content);
     const allTabIds = Object.values(TAB_CONFIG).flatMap(config => config.tabs);
-    
+
     document.querySelectorAll('.chirp').forEach(chirp => {
         chirp.classList.remove('animate-in');
         chirp.style.opacity = '0';
         chirp.style.transform = 'translateY(20px)';
     });
-    
+
     allContentIds.forEach(contentId => {
         const element = document.getElementById(contentId);
         if (element && element.style.display !== 'none') {
             element.classList.add('fade-out');
         }
     });
-    
+
     setTimeout(() => {
         allContentIds.forEach(contentId => {
             const element = document.getElementById(contentId);
             if (element) element.style.display = 'none';
         });
-        
+
         allTabIds.forEach(tabId => {
             const element = document.getElementById(tabId);
             if (element) element.classList.remove('active');
         });
-        
+
         allContentIds.forEach(contentId => {
             const element = document.getElementById(contentId);
             if (element) element.classList.remove('fade-out');
         });
-        
+
         const config = TAB_CONFIG[tabName];
         if (config) {
             const contentElement = document.getElementById(config.content);
@@ -363,7 +364,7 @@ function showTab(tabName) {
                 contentElement.style.display = 'block';
                 animateChirpsIn(contentElement);
             }
-            
+
             config.tabs.forEach(tabId => {
                 const tabElement = document.getElementById(tabId);
                 if (tabElement) tabElement.classList.add('active');
@@ -424,43 +425,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function showFollowing() {
-    const followingContent = document.getElementById('following-content');
-    const aboutContent = document.getElementById('about-content');
-    const experiencesContent = document.getElementById('experiences-content');
-    const projectsContent = document.getElementById('projects-content');
-    const skillsContent = document.getElementById('skills-content');
-    const photosContent = document.getElementById('photos-content');
-    
-    const tabs = document.querySelectorAll('.tab-button');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    
-    document.querySelectorAll('.chirp').forEach(chirp => {
-        chirp.classList.remove('animate-in');
-        chirp.style.opacity = '0';
-        chirp.style.transform = 'translateY(20px)';
-    });
-    
-    [aboutContent, experiencesContent, projectsContent, skillsContent, photosContent].forEach(content => {
-        if (content.style.display !== 'none') {
-            content.classList.add('fade-out');
-        }
-    });
-    
-    setTimeout(() => {
-        aboutContent.style.display = 'none';
-        experiencesContent.style.display = 'none';
-        projectsContent.style.display = 'none';
-        skillsContent.style.display = 'none';
-        photosContent.style.display = 'none';
-        
-        [aboutContent, experiencesContent, projectsContent, skillsContent, photosContent].forEach(content => {
-            content.classList.remove('fade-out');
-        });
-        
-        followingContent.style.display = 'block';
-        
-        animateChirpsIn(followingContent);
-    }, 150);
-}
+// showFollowing removed; all tabs now use showTab
 
