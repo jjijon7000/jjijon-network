@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio's Profile</title>
+    <meta name="description" content="Click here to visit Julio's profile.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="preloader">
+        <div role="progressbar" class="marquee"></div>
+    </div>
+    <div id="main-content" class="fade-in">
+        <div class="header">
+            <img class="chirper-logo" src="/images/chirper.png" alt="Chirper Logo">
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="sign-up-box">
+                    <h2 class="blink-text">Get in Touch with Julio Jijon</h2>
+                    <div>
+                        <p>Get in touch with Julio to get the lastest updates from them.</p>
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <div class="profile-header">
+                        <div class="profile-left-column">
+                            <img class="profile-image" src="/images/abf533803accf04d6e457b6ca7971219.jpg" alt="julio-profile-image">
+                            <h1 class="profile-name">@juliojijon</h1>
+                            <div class="mobile-verified">
+                                <img src="/images/2740730.png" alt="Verified Account Icon">
+                                <marquee behavior="scroll" direction="left"><span><strong>Verified Account</strong></span></marquee>
+                            </div>
+                            <div class="mobile-stats">
+                                <div class="mobile-stat clickable-stat" onclick="showFollowing()">
+                                    <span class="mobile-stat-number">15</span>
+                                    <span class="mobile-stat-label">following</span>
+                                </div>
+                                <div class="mobile-stat">
+                                    <span class="mobile-stat-number">2,003</span>
+                                    <span class="mobile-stat-label">followers</span>
+                                </div>
+                            </div>
+                            <div class="logos-container">
+                                <a href="https://linkedin.com/in/julio-jijon-jarquin"><img class="logos" src="/images/linkedin-black-icon-logo-png_seeklogo-387472-removebg-preview.png" alt="linekdin-logo"></a>
+                                <a href="https://github.com/jjijon7000"><img class="logos" src="/images/25231.png" alt="github-logo"></a>
+                                <a href="mailto:jijonj@berea.edu"><img class="logos" src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-mail-icon-png-image_995083.jpg" alt="email-logo"></a>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h1 class="profile-name">@juliojijon</h1>
+                            <div class="logos-container">
+                                <a href="https://linkedin.com/in/julio-jijon-jarquin"><img class="logo" src="/images/linkedin-black-icon-logo-png_seeklogo-387472-removebg-preview.png" alt="linekdin-logo"></a>
+                                <a href="https://github.com/jjijon7000"><img class="logo" src="/images/25231.png" alt="github-logo"></a>
+                                <a href="mailto:jijonj@berea.edu"><img class="logo" src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-mail-icon-png-image_995083.jpg" alt="email-logo"></a>
+                            </div>
+                            <div class="mobile-profile-details">
+                                <div class="mobile-detail-item">
+                                    <span class="mobile-detail-label">Name</span>
+                                    <span class="mobile-detail-value">Julio Jijon</span>
+                                </div>
+                                <div class="mobile-detail-item">
+                                    <span class="mobile-detail-label">Location</span>
+                                    <span class="mobile-detail-value">Berea, KY</span>
+                                </div>
+                                <div class="mobile-detail-item">
+                                    <span class="mobile-detail-label">Web</span>
+                                    <span class="mobile-detail-value"><a href="http://www.jjijon.net">jjijon.net</a></span>
+                                </div>
+                                <div class="mobile-detail-item">
+                                    <span class="mobile-detail-label">Bio</span>
+                                    <span class="mobile-detail-value">씨발</span>
+                                </div>
+                            </div>
+                            <div id="profile-music-player">
+                                <div id="mobile-music-widget" class="window-body" style="border: none !important; display: none;">
+                                    <div class="window" style="max-width:100%; margin-top:4px; width: 180px; max-width: 180px; min-width: 180px; height: 120px; max-height: 120px; min-height: 120px;">
+                                        <div class="title-bar"><div class="title-bar-text">Music</div></div>
+                                        <div class="window-body has-space">
+                                            <div class="mw-shell" style="display:flex; flex-direction:column; gap:6px;">
+                                                <div id="mobile-mw-track" title="Loading..." style="font-size:11px; line-height: 14px; height: 32px; margin-top:4px; width: 150px; max-width: 150px; overflow: hidden; position: relative;">Loading...</div>
+                                                <div class="mw-controls" style="display:flex; gap:4px; align-items:center; flex-wrap: nowrap;">
+                                                    <button id="mobile-mw-prev" aria-label="Previous" title="Previous" style="padding: 2px 6px; font-size: 11px; height: 22px; min-width: 22px; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">⏮️</button>
+                                                    <button id="mobile-mw-play" aria-label="Play/Pause" title="Play/Pause" style="padding: 2px 6px; font-size: 11px; height: 22px; min-width: 22px; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">▶️</button>
+                                                    <button id="mobile-mw-next" aria-label="Next" title="Next" style="padding: 2px 6px; font-size: 11px; height: 22px; min-width: 22px; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">⏭️</button>
+                                                    <button id="mobile-mw-open" aria-label="Open on SoundCloud" title="Open on SoundCloud" style="padding: 2px 6px; font-size: 11px; height: 22px; min-width: 22px; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">↗</button>
+                                                </div>
+                                                <div id="mobile-mw-progress" style="height: 3px; background:#ddd; border-radius:2px; position:relative; overflow:hidden;"><div id="mobile-mw-progress-bar" style="height:100%; width:0; background:#000;"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-container">
+                        <div class="tab-button active" id="about-tab" onclick="showTab('about')">
+                            <span>About Me</span>
+                        </div>
+                        <div class="tab-button" id="experiences-tab" onclick="showTab('experiences')">
+                            <span>Experiences</span>
+                        </div>
+                        <div class="tab-button" id="projects-tab" onclick="showTab('projects')">
+                            <span>Projects</span>
+                        </div>
+                        <div class="tab-button" id="skills-tab" onclick="showTab('skills')">
+                            <span>Skills</span>
+                        </div>
+                        <div class="tab-button" id="photos-tab" onclick="showTab('photos')">
+                            <span>Gallery</span>
+                        </div>
+                    </div>
+                    <div id="about-content">
+                        <h2>about me</h2>
+                        <hr>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <p>my name is julio jijon jarquin, and i am currently pursuing a bachelor's in computer science at berea college, where i have maintained a 3.7 gpa and earned recognition on the dean's list. before berea, i completed my associate's in computer science at walters state community college, where i graduated summa cum laude and was honored on both the president's list and dean's list and became a member of phi theta kappa. education has always been important to me, not just for the academic recognition but also for the opportunities to grow, connect, and challenge myself. at berea, i am also active outside the classroom as the treasurer of colorstack, an organization that supports students of color in tech, and as part of my college's futsal team, where we became champions in spring 2025.</p>
+                                <br>
+                                <p>my professional experiences have helped me shape my skills as both a problem solver and collaborator. as a teaching assistant for software design and implementation, i support over 30 students each semester by explaining core concepts in object-oriented programming and python. i lead office hours, design extra learning materials, and help students troubleshoot challenging bugs, which has deepened both my teaching ability and technical confidence. i also had the chance to work as a software engineer intern, where i contributed to full-stack development using html, css, javascript, bootstrap, and python. in that role, i closed issues, improved user experiences, and worked with git and docker to manage code effectively. earlier on, i gained experience as a student it support specialist, where i managed hardware and software resources, solved technical problems for faculty and staff, and built a foundation in troubleshooting and it management.</p>
+                                <br>
+                                <p>outside of work and classes, i enjoy taking on creative projects that combine my technical knowledge with my love for music. i've built several applications, including piano learning tools in c# and python and a synthesizer in c++ using the juce framework. these projects allow me to explore how technology can connect to creativity, education, and personal expression.</p>
+                                <br>
+                                <p>i consider myself someone who is constantly curious and eager to learn. i am fluent in both english and spanish, which helps me connect with a wider range of communities. i am drawn to opportunities that allow me to both build and teach, because i value collaboration as much as individual growth. looking ahead, my goal is to continue developing as a software engineer, while also exploring how i can bring together different areas of my life, like technology, music, and mentorship, to create meaningful work that has both impact and creativity at its core.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="experiences-content" style="display: none;">
+                        <h2>my experience</h2>
+                        <hr>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <h4>teaching assistant</h4><br>
+                                <div class="chirp-experience">
+                                <p>• Teaching Assistant for CSC 226: Software Design and Implement</p>
+                                <p>• Supported 30+ students per semester by reinforcing concepts in object-oriented programming and Python</p>
+                                <p>• Led weekly office hours to explain course content and help students troubleshoot complex bugs</p>
+                                <p>• Created supplementary materials and walkthroughs to aid student learning and reduce recurring errors</p>
+                                <p>• Collaborated with faculty to refine curriculum and improve clarity in programming instruction</p>
+                                <p>• Conducted technical interviews with students to assess programming knowledge and problem-solving ability</p>
+                            </div>
+                        </div>
+                            <div class="chirp-meta">
+                                january 2025 thru present via <a href="https://www.linkedin.com/school/berea-college/posts/?feedView=all">Berea College</a>
+                            </div>
+                        </div>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <h4>software engineer intern</h4><br>
+                                <div class="chirp-experience">
+                                <p>• Closed 20+ issues in the span of 8 weeks while utilizing efficient pair programming and collaborative workflows.</p>
+                                <p>• Discovered and documented 20+ design flaws and functional bugs, improving code quality and reducing future debugging time.</p>
+                                <p>• Contributed to full-stack development using HTML, CSS, JavaScript, Bootstrap for the frontend and Python for backend logic, improving user experience and maintainability.</p>
+                                <p>• Implemented unit tests and integration tests, ensuring code reliability and reducing deployment errors by 30%</p>
+                            </div>
+                            </div>
+                            <div class="chirp-meta">
+                                june 2025 thru august 2025 via <a href="https://www.linkedin.com/school/berea-college/posts/?feedView=all">Berea College</a>
+                            </div>
+                        </div>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <h4>student it support specialist</h4><br>
+                                <div class="chirp-experience">
+                                    <p>• Maintained and troubleshot over 150+ hardware devices across campus to ensure optimal performance</p>
+                                    <p>• Assisted professional IT staff in managing inventory and logging equipment for better resource tracking</p>
+                                    <p>• Resolved faculty and staff tech issues, improving access to essential hardware and educational tools</p>
+                                    <P>• Managed and updated IT inventory systems, ensuring accurate tracking of all hardware and software assets</P>
+                                </div>
+                            </div>
+                            <div class="chirp-meta">
+                                august 2022 thru may 2024 via <a href="https://www.linkedin.com/school/walters-state-community-college/posts/?feedView=all">Walters State Community College</a>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div id="projects-content" style="display: none;">
+                        <h2>projects</h2>
+                        <hr>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <h4>this website lol | <span style="font-style: italic; font-weight: lighter !important;">HTML, CSS, JavaScript <a href="https://github.com/jjijon7000/undertow-synth"><img class="click-link-icon" src="https://static.thenounproject.com/png/3560696-200.png" alt="click-link"></a></span></h4>
+                                <div class="chirp-experience">
+                                    <p>• Built a responsive portfolio website using JavaScript, HTML, and CSS, designed with a clean layout and smooth user experience in mind.</p>
+                                    <p>• Integrated the SoundCloud Widget API to embed and control music playback directly within the site, adding interactive media features.</p>
+                                    <p>• Showcased both technical skills and creativity by combining functional design, custom styling, and external API integration into a single polished project.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <h4>undertow synth | <span style="font-style: italic; font-weight: lighter !important;">JUCE, C++ <a href="https://github.com/jjijon7000/undertow-synth"><img class="click-link-icon" src="https://static.thenounproject.com/png/3560696-200.png" alt="click-link"></a></span></h4> 
+                                <br>
+                                <div class="chirp-experience">
+                                    <p>• Designed and implemented a polyphonic software synthesizer using the JUCE framework and C++</p>
+                                    <p>• Built core audio components including oscillators, ADSR envelope, LFO, and filters for sound shaping</p>
+                                    <p>• Created an interactive GUI for real-time parameter control and plugin testing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <h4>python piano | <span style="font-style: italic; font-weight: lighter !important;">Python<a href="https://github.com/Berea-College-CSC-226/p01-final-project-jijonj"><img class="click-link-icon" src="https://static.thenounproject.com/png/3560696-200.png" alt="click-link"></a></span></h4> 
+                                <br>
+                                <div class="chirp-experience">
+                                    <p>• Rebuilt earlier C# piano project in Python using an object-oriented design approach</p>
+                                    <p>• Condensed logic and improved maintainability while retaining all core functionality</p>
+                                    <p>• Enabled visual display of major and minor scales, aiding user learning</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <h4>c# piano | <span style="font-style: italic; font-weight: lighter !important;">C#</span></h4> 
+                                <br>
+                                <div class="chirp-experience">
+                                    <p>• Developed an interactive piano application that maps computer keyboard input to piano keys</p>
+                                    <p>• Implemented real-time visual feedback of major and minor scales to support music theory education</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="skills-content" style="display: none;">
+                        <h2>skills</h2>
+                        <hr>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <div class="skills-gallery">
+                                    <div class="skill-item">
+                                        <a href="https://www.python.org/">
+                                            <img src="https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png" alt="python-logo">
+                                            <span>Python</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1820px-Logo_C_sharp.svg.png" alt="c-sharp-logo">
+                                            <span>C#</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://www.javascript.com/">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="javascript-logo">
+                                            <span>JavaScript</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://html.com/">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png" alt="html-logo">
+                                            <span>HTML5</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://cplusplus.com/">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="c-plus-plus-logo">
+                                            <span>C++</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://www.linuxfoundation.org/">
+                                            <img src="https://www.clipartmax.com/png/middle/249-2494952_penguin-clipart-profile-linux-logo-vector.png" alt="linux-logo">
+                                            <span>Linux</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://www.kali.org/">
+                                            <img src="https://www.svgrepo.com/show/330767/kalilinux.svg" alt="kali-linux-logo">
+                                            <span>Kali Linux</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://www.java.com/en/">
+                                            <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png" alt="java-logo">
+                                            <span>Java</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://www.mysql.com/">
+                                            <img src="https://cdn.freebiesupply.com/logos/large/2x/mysql-5-logo-svg-vector.svg" alt="mysql-logo">
+                                            <span>MySQL</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://git-scm.com/">
+                                            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="git-logo">
+                                            <span>Git</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://en.wikipedia.org/wiki/CSS">
+                                            <img src="https://img.icons8.com/color/512/css3.png" alt="css-logo">
+                                            <span>CSS</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://code.visualstudio.com/">
+                                            <img src="https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg" alt="vs-logo">
+                                            <span>VS Code</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://react.dev/">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="react-logo">
+                                            <span>React</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://tailwindcss.com/">
+                                            <img src="https://www.svgrepo.com/show/374118/tailwind.svg" alt="tailwind-css-logo">
+                                            <span>Tailwind CSS</span>
+                                        </a>
+                                    </div>
+                                    <div class="skill-item">
+                                        <a href="https://nodejs.org/">
+                                            <img src="https://www.svgrepo.com/show/303360/nodejs-logo.svg" alt="nodejs-logo">
+                                            <span>Node.js</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="following-content" style="display: none;">
+                        <h2>following</h2>
+                        <hr>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <div class="following-gallery">
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/2hollis">
+                                                <img src="https://lastfm.freetls.fastly.net/i/u/avatar170s/c40e24a1aa2f71e66b40ea0fec2bd1a3" alt="2hollis">
+                                                <div class="following-info">
+                                                    <span class="following-name">2hollis</span>
+                                                    <span class="following-handle">@2hollis</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/crystal-castles">
+                                                <img src="https://f4.bcbits.com/img/a1841281907_10.jpg" alt="Crystal Castles">
+                                                <div class="following-info">
+                                                    <span class="following-name">Crystal Castles</span>
+                                                    <span class="following-handle">@crystal-castles</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/damonr-music">
+                                                <img src="https://pbs.twimg.com/media/GgywmhZWwAApKuz?format=jpg&name=large" alt="Damon R">
+                                                <div class="following-info">
+                                                    <span class="following-name">Damon R</span>
+                                                    <span class="following-handle">@damonr-music</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/the-hellp">
+                                                <img src="https://hashbrandnew.com/Artist/image-thumb__11359__large/608a55db222d3The%20Hellp5DslL3PUa3BcRlCCEP64A4.webp" alt="The Hellp">
+                                                <div class="following-info">
+                                                    <span class="following-name">The Hellp</span>
+                                                    <span class="following-handle">@the-hellp</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/kencarson">
+                                                <img src="https://i.scdn.co/image/ab6761610000e5eb95ccca370d8bd50e84c222bc" alt="Ken Carson">
+                                                <div class="following-info">
+                                                    <span class="following-name">Ken Carson</span>
+                                                    <span class="following-handle">@kencarson</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/destroylonely">
+                                                <img src="https://i.redd.it/2cdf3rtotewa1.jpg" alt="Destroy Lonely">
+                                                <div class="following-info">
+                                                    <span class="following-name">Destroy Lonely</span>
+                                                    <span class="following-handle">@destroylonely</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/playboicarti">
+                                                <img src="https://i.scdn.co/image/ab6761610000e5ebba50ca67ffc3097f6ea1710a" alt="Playboi Carti">
+                                                <div class="following-info">
+                                                    <span class="following-name">Playboi Carti</span>
+                                                    <span class="following-handle">@playboicarti</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/skrillex">
+                                                <img src="https://pbs.twimg.com/media/BfL9aNbCYAAOGyg.jpg" alt="Skrillex">
+                                                <div class="following-info">
+                                                    <span class="following-name">Skrillex</span>
+                                                    <span class="following-handle">@skrillex</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/deadmau5">
+                                                <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/b0/6d/5c/b06d5c8a-f60c-22cb-cc90-5700b64a722c/source/256x256bb.jpg" alt="Deadmau5">
+                                                <div class="following-info">
+                                                    <span class="following-name">Deadmau5</span>
+                                                    <span class="following-handle">@deadmau5</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/ecco2k1">
+                                                <img src="https://i.scdn.co/image/ab6761610000e5eba4caf4073b40cef9206c8012" alt="Ecco2k">
+                                                <div class="following-info">
+                                                    <span class="following-name">Ecco2k</span>
+                                                    <span class="following-handle">@ecco2k1</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/bladee1000">
+                                                <img src="https://ih1.redbubble.net/image.3966610060.2733/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="Bladee">
+                                                <div class="following-info">
+                                                    <span class="following-name">Bladee</span>
+                                                    <span class="following-handle">@bladee1000</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/yung-lean-doer">
+                                                <img src="https://i1.sndcdn.com/avatars-a6CUmOzfrjxCZTo6-QPbCuQ-t240x240.jpg" alt="Yung Lean">
+                                                <div class="following-info">
+                                                    <span class="following-name">Yung Lean</span>
+                                                    <span class="following-handle">@yung-lean-doer</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/thaiboy-digital">
+                                                <img src="https://res.cloudinary.com/dzlvqlshv/image/upload/f_auto,q_auto,dpr_2.0,w_700/yr1-archive-production/qaoghve4oedvgfb1nvet" alt="Thaiboy Digital">
+                                                <div class="following-info">
+                                                    <span class="following-name">Thaiboy Digital</span>
+                                                    <span class="following-handle">@thaiboy-digital</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/snowstrippers">
+                                                <img src="https://images.genius.com/242da765f0d21b9823daad47dd8f815e.1000x1000x1.jpg" alt="Snowstrippers">
+                                                <div class="following-info">
+                                                    <span class="following-name">Snowstrippers</span>
+                                                    <span class="following-handle">@snowstrippers</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="following-item">
+                                        <div class="following-profile">
+                                            <a href="https://soundcloud.com/asvpxrocky">
+                                                <img src="https://i1.sndcdn.com/artworks-ZKKxwboThyjTkLyY-vJt7Yg-t1080x1080.jpg" alt="A$AP Rocky">
+                                                <div class="following-info">
+                                                    <span class="following-name">A$AP Rocky</span>
+                                                    <span class="following-handle">@asvpxrocky</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="photos-content" style="display: none;">
+                        <h2>gallery</h2>
+                        <hr>
+                        <div class="chirp">
+                            <div class="chirp-content">
+                                <div class="photo-gallery">
+                                    <img src="/images/2024-10-20-222850.jpg" alt="ps-vita-photo1">
+                                    <img src="/images/2024-10-20-223306.jpg" alt="ps-vita-photo2">
+                                    <img src="/images/kencarsonlouisville1.gif" alt="ps-vita-video1">
+                                    <img src="/images/outside1.gif" alt="ps-vita-video2">
+                                    <img src="/images/kencarsonlouisville2.gif" alt="ps-vita-video3">
+                                    <img src="/images/kencarsonlouisville3.gif" alt="ps-vita-video4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="verified-account">
+                <img class="verified-icon" src="/images/2740730.png" alt="Verified Account Icon">
+                <marquee behavior="scroll" direction="left"><span><strong>Verified Account</strong></span></marquee>
+            </div>
+            <div class="profile-details">
+                <div><span class="label">Name</span> Julio Jijon</div>
+                <div><span class="label">Location</span> Berea, KY</div>
+                <div><span class="label">Web</span> <a href="http://www.jjijon.net">jjijon.net</a></div>
+                <div><span class="label">Bio</span> 씨발 </div>
+            </div>
+            <div class="stats">
+                <div class="stat-row">
+                    <div>15</div>
+                    <div>following</div>
+                </div>
+                <div class="stat-row">
+                    <div>2,003</div>
+                    <div>followers</div>
+                </div>
+            </div>
+            <div id="desktop-music-widget" class="window-body" style="border: none !important; display: none;">
+                <div class="window" style="max-width:100%; margin-top:4px; width: 200px; max-width: 200px; min-width: 200px; height: 125px; max-height: 125px; min-height: 125px;">
+                    <div class="title-bar"><div class="title-bar-text">Music</div></div>
+                    <div class="window-body has-space">
+                        <div class="mw-shell" style="display:flex; flex-direction:column; gap:8px;">
+                            <div id="desktop-mw-track" title="Loading..." style="font-size:11px; line-height: 14px; height: 32px; margin-top:4px; width: 170px; max-width: 170px; overflow: hidden; position: relative;">Loading...</div>
+                            <div class="mw-controls" style="display:flex; gap:4px; align-items:center;">
+                                <button id="desktop-mw-prev" aria-label="Previous" title="Previous" style="padding:2px 6px; font-size:11px; line-height:1; height:22px; min-width:auto; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">⏮️</button>
+                                <button id="desktop-mw-play" aria-label="Play/Pause" title="Play/Pause" style="padding:2px 6px; font-size:11px; line-height:1; height:22px; min-width:auto; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">▶️</button>
+                                <button id="desktop-mw-next" aria-label="Next" title="Next" style="padding:2px 6px; font-size:11px; line-height:1; height:22px; min-width:auto; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">⏭️</button>
+                                <button id="desktop-mw-open" aria-label="Open on SoundCloud" title="Open on SoundCloud" style="padding:2px 6px; font-size:11px; line-height:1; height:22px; min-width:auto; background:#fff; border:1px solid #bbb; border-radius:4px; cursor:pointer;">↗</button>
+                            </div>
+                            <div id="desktop-mw-progress" style="height:3px; background:#ddd; border-radius:2px; position:relative; overflow:hidden;"><div id="desktop-mw-progress-bar" style="height:100%; width:0; background:#000;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-container">
+                <div class="tab-button active" id="sidebar-about-tab" onclick="showTab('about')">
+                    <div class="stat-row">
+                        <div>About Me</div>
+                    </div>
+                </div>
+                <div class="tab-button" id="sidebar-experiences-tab" onclick="showTab('experiences')">
+                    <div class="stat-row">
+                        <div>Experiences</div>
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="tab-button" id="sidebar-projects-tab" onclick="showTab('projects')">
+                    <div class="stat-row">
+                        <div>Projects</div>
+                        <div>4</div>
+                    </div>
+                </div>
+                <div class="tab-button" id="sidebar-photos-tab" onclick="showTab('photos')">
+                    <div class="stat-row">
+                        <div>Gallery</div>
+                        <div>6</div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="sidebar-section">
+                <h4>Following</h4>
+                <div class="following-grid">
+                    <a href="https://soundcloud.com/2hollis"><img src="https://lastfm.freetls.fastly.net/i/u/avatar170s/c40e24a1aa2f71e66b40ea0fec2bd1a3" alt="Following"></a>
+                    <a href="https://soundcloud.com/crystal-castles"><img src="https://f4.bcbits.com/img/a1841281907_10.jpg" alt="Following"></a>
+                    <a href="https://soundcloud.com/damonr-music"><img src="https://pbs.twimg.com/media/GgywmhZWwAApKuz?format=jpg&name=large" alt="Following"></a>
+                    <a href="https://soundcloud.com/the-hellp"><img src="https://hashbrandnew.com/Artist/image-thumb__11359__large/608a55db222d3The%20Hellp5DslL3PUa3BcRlCCEP64A4.webp" alt="Following"></a>
+                    <a href="https://soundcloud.com/kencarson"><img src="https://i.scdn.co/image/ab6761610000e5eb95ccca370d8bd50e84c222bc" alt="Following"></a>
+                    <a href="https://soundcloud.com/destroylonely"><img src="https://i.redd.it/2cdf3rtotewa1.jpg" alt="Following"></a>
+                    <a href="https://soundcloud.com/playboicarti"><img src="https://i.scdn.co/image/ab6761610000e5ebba50ca67ffc3097f6ea1710a" alt="Following"></a>
+                    <a href="https://soundcloud.com/skrillex"><img src="https://pbs.twimg.com/media/BfL9aNbCYAAOGyg.jpg" alt="Following"></a>
+                    <a href="https://soundcloud.com/deadmau5"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/b0/6d/5c/b06d5c8a-f60c-22cb-cc90-5700b64a722c/source/256x256bb.jpg" alt="Following"></a>
+                    <a href="https://soundcloud.com/ecco2k1"><img src="https://i.scdn.co/image/ab6761610000e5eba4caf4073b40cef9206c8012" alt="Following"></a>
+                    <a href="https://soundcloud.com/bladee1000"><img src="https://ih1.redbubble.net/image.3966610060.2733/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="Following"></a>
+                    <a href="https://soundcloud.com/yung-lean-doer"><img src="https://i1.sndcdn.com/avatars-a6CUmOzfrjxCZTo6-QPbCuQ-t240x240.jpg" alt="Following"></a>
+                    <a href="https://soundcloud.com/thaiboy-digital"><img src="https://res.cloudinary.com/dzlvqlshv/image/upload/f_auto,q_auto,dpr_2.0,w_700/yr1-archive-production/qaoghve4oedvgfb1nvet" alt="Following"></a>
+                    <a href="https://soundcloud.com/snowstrippers"><img src="https://images.genius.com/242da765f0d21b9823daad47dd8f815e.1000x1000x1.jpg" alt="Following"></a>
+                    <a href="https://soundcloud.com/asvpxrocky"><img src="https://i1.sndcdn.com/artworks-ZKKxwboThyjTkLyY-vJt7Yg-t1080x1080.jpg" alt="Following"></a>
+                </div>
+            </div>
+            <br>
+            <div class="sidebar-section">
+                <h4>Skills</h4>
+                <div class="following-grid">
+                    <a href="https://www.python.org/"><img src="https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png" alt="python-logo"></a>
+                    <a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1820px-Logo_C_sharp.svg.png" alt="c-sharp-logo"></a>
+                    <a href="https://www.javascript.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="javascript-logo"></a>
+                    <a href="https://html.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png" alt="html-logo"></a>
+                    <a href="https://cplusplus.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="c-plus-plus-logo"></a>
+                    <a href="https://www.linuxfoundation.org/"><img src="https://www.clipartmax.com/png/middle/249-2494952_penguin-clipart-profile-linux-logo-vector.png" alt="linux-logo"></a>
+                    <a href="https://www.kali.org/"><img src="https://www.svgrepo.com/show/330767/kalilinux.svg" alt="kali-linux-logo"></a>
+                    <a href="https://www.java.com/en/"><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png" alt="java-logo"></a>
+                    <a href="https://www.mysql.com/"><img src="https://cdn.freebiesupply.com/logos/large/2x/mysql-5-logo-svg-vector.svg" alt="mysql-logo"></a>
+                    <a href="https://git-scm.com/"><img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="git-logo"></a>
+                    <a href="https://en.wikipedia.org/wiki/CSS"><img src="https://img.icons8.com/color/512/css3.png" alt="css-logo"></a>
+                    <a href="https://code.visualstudio.com/"><img src="https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg" alt="vs-logo"></a>
+                    <a href="https://react.dev/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="react-logo"></a>
+                    <a href="https://tailwindcss.com/"><img src="https://www.svgrepo.com/show/374118/tailwind.svg" alt="tailwind-css-logo"></a>
+                    <a href="https://nodejs.org/"><img src="https://www.svgrepo.com/show/303360/nodejs-logo.svg" alt="nodejs-logo"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <span style="position: relative; left: 20px;">This is not a real social media. lol. this is a mock of social media used during the early 2010s.</span>
+        <p style="font-size: 10px">a julio jijon production.</p>
+    </div>
+    <div id="custom-modal" class="modal" style="display:none;">
+    <div class="window active" style="max-width: 300px">
+        <div class="title-bar">
+        <div class="title-bar-text">contact me!</div>
+        <div class="title-bar-controls">
+            <button aria-label="Close"></button>
+        </div>
+        </div>
+        <div class="window-body has-space">
+        <p>u should contact me lol</p>
+        </div>
+    </div>
+    </div>
+    <div id="imageModal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img class="image-modal-content" id="modalImage">
+    </div>
+</body>
+</html>
