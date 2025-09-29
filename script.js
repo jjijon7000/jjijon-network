@@ -69,8 +69,18 @@ class SoundCloudWidgetController {
         });
         widget.bind(SC.Widget.Events.FINISH, () => {
             this.stopProgress(true);
-            widget.skip(0);
-            widget.play();
+            widget.getSounds((sounds) => {
+                widget.getCurrentSoundIndex((index) => {
+                    if (index === sounds.length - 1) {
+                        // Last song, loop to first
+                        widget.skip(0);
+                        widget.play();
+                    } else {
+                        // Not last song, go to next
+                        widget.next();
+                    }
+                });
+            });
         });
         widget.bind(SC.Widget.Events.PLAY_PROGRESS, (e) => {
             this.updateProgress(e);
