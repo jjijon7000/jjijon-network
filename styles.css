@@ -1,3 +1,32 @@
+@media (min-width: 769px) {
+    .profile-details {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .profile-details-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .profile-details-row .label {
+        text-align: left;
+        flex: 1;
+    }
+    .profile-details-row .value {
+        text-align: right;
+        flex: 2;
+        word-break: break-all;
+    }
+}
+/* Force lowercase for main tab content */
+#experiences-content,
+#projects-content,
+#skills-content,
+#following-content {
+    text-transform: lowercase;
+}
 #preloader {
     position: fixed;
     top: 0;
@@ -301,7 +330,6 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    font-style: italic;
 }
 .verified-icon {
     width: 20px;
@@ -1024,11 +1052,12 @@ iframe {
     .tab-button {
         flex: 1;
         min-width: 0;
-        padding: 3px 2px;
+        padding: 28px 6px;
+        min-height: 48px;
         text-align: center;
         border-bottom: 3px solid transparent;
         border-right: 1px solid #eee;
-        font-size: 10px;
+        font-size: 13px;
         font-weight: 600;
         white-space: nowrap;
         border-radius: 0;
@@ -1042,13 +1071,13 @@ iframe {
         display: none;
     }
     #experiences-tab::after {
-        content: "Exp.";
+        content: "exp.";
     }
     #about-tab span {
         display: none;
     }
     #about-tab::after {
-        content: "About\AMе";
+        content: "about me.";
         white-space: pre-line;
         line-height: 1.1;
     }
@@ -1191,24 +1220,7 @@ iframe {
     .mobile-stat-label {
         font-size: 12px;
     }
-    .tab-button {
-        min-width: 0;
-        padding: 6px 6px;
-        font-size: 12px;
-        font-weight: normal;
-    }
-    
-    .tab-button * {
-        font-weight: normal;
-    }
-    
-    .tab-button.active {
-        font-weight: normal;
-    }
-    
-    .tab-button.active * {
-        font-weight: normal;
-    }
+    /* Removed .tab-button override to allow larger mobile tab styles */
     .mobile-detail-item {
         font-size: 12px;
         flex: 0 0 auto;
