@@ -339,8 +339,11 @@ body {
 .profile-details {
     margin-bottom: 20px;
 }
-.profile-details div {
-    margin-bottom: 5px;
+
+@media (min-width: 769px) {
+    .profile-details-row {
+        margin-bottom: 5px;
+    }
 }
 .label {
     color: #666;
