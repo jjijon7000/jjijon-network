@@ -49,7 +49,7 @@
                             <div class="logos-container">
                                 <a href="https://linkedin.com/in/julio-jijon-jarquin"><img class="logos" src="/images/linkedin-black-icon-logo-png_seeklogo-387472-removebg-preview.png" alt="linekdin-logo"></a>
                                 <a href="https://github.com/jjijon7000"><img class="logos" src="/images/25231.png" alt="github-logo"></a>
-                                <a href="mailto:jijonj@berea.edu"><img class="logos" src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-mail-icon-png-image_995083.jpg" alt="email-logo"></a>
+                                <a href="#" onclick="openEmailModal(); return false;"><img class="logos" src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-mail-icon-png-image_995083.jpg" alt="email-logo"></a>
                             </div>
                         </div>
                         <div class="profile-info">
@@ -57,7 +57,7 @@
                             <div class="logos-container">
                                 <a href="https://linkedin.com/in/julio-jijon-jarquin"><img class="logo" src="/images/linkedin-black-icon-logo-png_seeklogo-387472-removebg-preview.png" alt="linekdin-logo"></a>
                                 <a href="https://github.com/jjijon7000"><img class="logo" src="/images/25231.png" alt="github-logo"></a>
-                                <a href="mailto:jijonj@berea.edu"><img class="logo" src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-mail-icon-png-image_995083.jpg" alt="email-logo"></a>
+                                <a href="#" onclick="openEmailModal(); return false;"><img class="logo" src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-mail-icon-png-image_995083.jpg" alt="email-logo"></a>
                             </div>
                             <div class="mobile-profile-details">
                                 <div class="mobile-detail-item">
@@ -645,9 +645,43 @@
         </div>
     </div>
     </div>
-    <div id="imageModal" class="image-modal">
-        <span class="image-modal-close">&times;</span>
-        <img class="image-modal-content" id="modalImage">
+    <div id="imageModal" class="modal" style="display:none;">
+        <div class="window active" style="max-width: 90vw; max-height: 90vh;">
+            <div class="title-bar">
+                <div class="title-bar-text">image viewer</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" id="imageModalClose"></button>
+                </div>
+            </div>
+            <div class="window-body has-space" style="padding: 10px; max-height: calc(90vh - 50px); overflow: auto;">
+                <img id="modalImage" style="max-width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+    </div>
+    <div id="emailModal" class="modal" style="display:none;">
+        <div class="window active" style="max-width: 400px">
+            <div class="title-bar">
+                <div class="title-bar-text">send me an email</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" id="emailModalClose"></button>
+                </div>
+            </div>
+            <div class="window-body has-space">
+                <form action="https://formspree.io/f/xkgqyejw" method="POST" id="emailForm">
+                    <div class="field-row-stacked" style="width: 100%; margin-bottom: 15px;">
+                        <label for="email">your email:</label>
+                        <input type="email" name="email" id="email" required style="width: 100%; padding: 5px; box-sizing: border-box;">
+                    </div>
+                    <div class="field-row-stacked" style="width: 100%; margin-bottom: 15px;">
+                        <label for="message">your message:</label>
+                        <textarea name="message" id="message" rows="6" required style="width: 100%; padding: 5px; box-sizing: border-box; resize: vertical;"></textarea>
+                    </div>
+                    <div style="text-align: right;">
+                        <button type="submit">send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
