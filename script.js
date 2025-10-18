@@ -398,11 +398,11 @@ function animateChirpsIn(container) {
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.image-modal-close');
+    const closeBtn = document.getElementById('imageModalClose');
     
     document.querySelectorAll('.photo-gallery img').forEach(img => {
         img.addEventListener('click', function() {
-            modal.style.display = 'block';
+            modal.style.display = 'flex';
             modalImage.src = this.src;
             modalImage.alt = this.alt;
             setTimeout(() => {
@@ -413,10 +413,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function closeModal() {
         modal.classList.remove('show');
-        modal.classList.add('hide');
         setTimeout(() => {
             modal.style.display = 'none';
-            modal.classList.remove('hide');
         }, 300); 
     }
     
@@ -429,11 +427,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
             closeModal();
         }
     });
 });
 
+// Email modal functions
+function openEmailModal() {
+    const emailModal = document.getElementById('emailModal');
+    if (emailModal) {
+        emailModal.style.display = 'flex';
+        setTimeout(() => {
+            emailModal.classList.add('show');
+        }, 10);
+    }
+}
+
+function closeEmailModal() {
+    const emailModal = document.getElementById('emailModal');
+    if (emailModal) {
+        emailModal.classList.remove('show');
+        setTimeout(() => {
+            emailModal.style.display = 'none';
+            // Reset form
+            const form = document.getElementById('emailForm');
+            if (form) form.reset();
+        }, 300);
+    }
+}
+
+// Setup email modal on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const emailModalClose = document.getElementById('emailModalClose');
+    const emailModal = document.getElementById('emailModal');
+    
+    if (emailModalClose) {
+        emailModalClose.addEventListener('click', closeEmailModal);
+    }
+    
+    if (emailModal) {
+        emailModal.addEventListener('click', function(e) {
+            if (e.target === emailModal) {
+                closeEmailModal();
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && emailModal && emailModal.style.display === 'flex') {
+            closeEmailModal();
+        }
+    });
+    
+    // Handle form submission
+    const emailForm = document.getElementById('emailForm');
+    if (emailForm) {
+        emailForm.addEventListener('submit', function(e) {
+            // Let formspree handle the submission
+            // After submission, close modal after a brief delay
+            setTimeout(() => {
+                closeEmailModal();
+            }, 1000);
+        });
+    }
+});
+
 // showFollowing removed; all tabs now use showTab
+
 
