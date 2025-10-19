@@ -571,6 +571,7 @@ img#download {
     margin-bottom: 15px;
     overflow: hidden;
 }
+
 .tab-group {
     display: flex;
     flex-direction: column;
